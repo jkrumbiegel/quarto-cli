@@ -151,13 +151,13 @@ jobs:
       - name: Setup Julia
         uses: julia-actions/setup-julia@v1.9.4
         with:
-          version: 1.9.3
+          version: 1.9.4
 
       - name: Cache Julia Packages
         uses: julia-actions/cache@v1
         with:
           cache-name: version-1
-          cache-registries: true
+          cache-registries: false
 
       - name: Restore Julia Packages
         working-directory: tests
