@@ -28,6 +28,10 @@ on:
   schedule:
     - cron: "0 6 * * *"
 
+permissions:
+  actions: write
+  contents: read
+
 jobs:
   run-smokes:
     name: Run smoke (${{ matrix.os }})${{ matrix.time-test && ' with timed file' || ''}}
@@ -149,15 +153,12 @@ jobs:
         uses: browser-actions/setup-chrome@latest
 
       - name: Setup Julia
-        uses: julia-actions/setup-julia@v1.9.4
+        uses: julia-actions/setup-julia@v1.9.5
         with:
-          version: 1.9.4
+          version: "1.10"
 
       - name: Cache Julia Packages
         uses: julia-actions/cache@v1
-        with:
-          cache-name: version-1
-          cache-registries: false
 
       - name: Restore Julia Packages
         working-directory: tests
