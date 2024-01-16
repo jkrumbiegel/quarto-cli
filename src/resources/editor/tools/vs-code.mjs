@@ -9329,6 +9329,45 @@ var require_yaml_intelligence_resources = __commonJS({
                 ],
                 description: "Enable Google Analytics for this website"
               },
+              announcement: {
+                anyOf: [
+                  "string",
+                  {
+                    object: {
+                      properties: {
+                        content: {
+                          schema: "string",
+                          description: "The content of the announcement"
+                        },
+                        dismissable: {
+                          schema: "boolean",
+                          description: "Whether this announcement may be dismissed by the user."
+                        },
+                        icon: {
+                          schema: "string",
+                          description: "The icon to display in the annoucement"
+                        },
+                        type: {
+                          schema: {
+                            enum: [
+                              "primary",
+                              "secondary",
+                              "success",
+                              "danger",
+                              "warning",
+                              "info",
+                              "light",
+                              "dark"
+                            ]
+                          },
+                          description: "The type of announcement. Affects the appearance of the announcement."
+                        }
+                      }
+                    }
+                  }
+                ],
+                description: "Provides an announcement displayed at the top of the page."
+              },
               "cookie-consent": {
                 anyOf: [
                   {
@@ -19524,6 +19563,10 @@ var require_yaml_intelligence_resources = __commonJS({
           short: "The version number of Google Analytics to use.",
           long: "The version number of Google Analytics to use."
         },
+        "Provides an announcement displayed at the top of the page.",
+        "The icon to display in the annoucement",
+        "Whether this announcement may be dismissed by the user.",
+        "The content of the announcement",
         {
           short: "Request cookie consent before enabling scripts that set cookies",
           long: 'Quarto includes the ability to request cookie consent before enabling\nscripts that set cookies, using <a href="https://www.cookieconsent.com/">Cookie Consent</a>.\nThe user\u2019s cookie preferences will automatically control Google\nAnalytics (if enabled) and can be used to control custom scripts you add\nas well. For more information see <a href="https://quarto.org/docs/websites/website-tools.html#custom-scripts-and-cookie-consent">Custom\nScripts and Cookie Consent</a>.'
@@ -19579,6 +19622,7 @@ var require_yaml_intelligence_resources = __commonJS({
         "The responsive breakpoint below which the navbar will collapse into a\nmenu (<code>sm</code>, <code>md</code>, <code>lg</code> (default),\n<code>xl</code>, <code>xxl</code>).",
         "List of items for the left side of the navbar.",
         "List of items for the right side of the navbar.",
+        "The position of the collapsed navbar toggle when in responsive\nmode",
         "Side navigation options",
         "The identifier for this sidebar.",
         "The sidebar title. Uses the project title if none is specified.",
@@ -19658,6 +19702,10 @@ var require_yaml_intelligence_resources = __commonJS({
           short: "The version number of Google Analytics to use.",
           long: "The version number of Google Analytics to use."
         },
+        "Provides an announcement displayed at the top of the page.",
+        "The icon to display in the annoucement",
+        "Whether this announcement may be dismissed by the user.",
+        "The content of the announcement",
         {
           short: "Request cookie consent before enabling scripts that set cookies",
           long: 'Quarto includes the ability to request cookie consent before enabling\nscripts that set cookies, using <a href="https://www.cookieconsent.com/">Cookie Consent</a>.\nThe user\u2019s cookie preferences will automatically control Google\nAnalytics (if enabled) and can be used to control custom scripts you add\nas well. For more information see <a href="https://quarto.org/docs/websites/website-tools.html#custom-scripts-and-cookie-consent">Custom\nScripts and Cookie Consent</a>.'
@@ -19713,6 +19761,7 @@ var require_yaml_intelligence_resources = __commonJS({
         "The responsive breakpoint below which the navbar will collapse into a\nmenu (<code>sm</code>, <code>md</code>, <code>lg</code> (default),\n<code>xl</code>, <code>xxl</code>).",
         "List of items for the left side of the navbar.",
         "List of items for the right side of the navbar.",
+        "The position of the collapsed navbar toggle when in responsive\nmode",
         "Side navigation options",
         "The identifier for this sidebar.",
         "The sidebar title. Uses the project title if none is specified.",
@@ -21830,6 +21879,10 @@ var require_yaml_intelligence_resources = __commonJS({
           short: "The version number of Google Analytics to use.",
           long: "The version number of Google Analytics to use."
         },
+        "Provides an announcement displayed at the top of the page.",
+        "The icon to display in the annoucement",
+        "Whether this announcement may be dismissed by the user.",
+        "The content of the announcement",
         {
           short: "Request cookie consent before enabling scripts that set cookies",
           long: 'Quarto includes the ability to request cookie consent before enabling\nscripts that set cookies, using <a href="https://www.cookieconsent.com/">Cookie Consent</a>.\nThe user\u2019s cookie preferences will automatically control Google\nAnalytics (if enabled) and can be used to control custom scripts you add\nas well. For more information see <a href="https://quarto.org/docs/websites/website-tools.html#custom-scripts-and-cookie-consent">Custom\nScripts and Cookie Consent</a>.'
@@ -21885,6 +21938,7 @@ var require_yaml_intelligence_resources = __commonJS({
         "The responsive breakpoint below which the navbar will collapse into a\nmenu (<code>sm</code>, <code>md</code>, <code>lg</code> (default),\n<code>xl</code>, <code>xxl</code>).",
         "List of items for the left side of the navbar.",
         "List of items for the right side of the navbar.",
+        "The position of the collapsed navbar toggle when in responsive\nmode",
         "Side navigation options",
         "The identifier for this sidebar.",
         "The sidebar title. Uses the project title if none is specified.",
@@ -22148,6 +22202,10 @@ var require_yaml_intelligence_resources = __commonJS({
           short: "The version number of Google Analytics to use.",
           long: "The version number of Google Analytics to use."
         },
+        "Provides an announcement displayed at the top of the page.",
+        "The icon to display in the annoucement",
+        "Whether this announcement may be dismissed by the user.",
+        "The content of the announcement",
         {
           short: "Request cookie consent before enabling scripts that set cookies",
           long: 'Quarto includes the ability to request cookie consent before enabling\nscripts that set cookies, using <a href="https://www.cookieconsent.com/">Cookie Consent</a>.\nThe user\u2019s cookie preferences will automatically control Google\nAnalytics (if enabled) and can be used to control custom scripts you add\nas well. For more information see <a href="https://quarto.org/docs/websites/website-tools.html#custom-scripts-and-cookie-consent">Custom\nScripts and Cookie Consent</a>.'
@@ -22203,6 +22261,7 @@ var require_yaml_intelligence_resources = __commonJS({
         "The responsive breakpoint below which the navbar will collapse into a\nmenu (<code>sm</code>, <code>md</code>, <code>lg</code> (default),\n<code>xl</code>, <code>xxl</code>).",
         "List of items for the left side of the navbar.",
         "List of items for the right side of the navbar.",
+        "The position of the collapsed navbar toggle when in responsive\nmode",
         "Side navigation options",
         "The identifier for this sidebar.",
         "The sidebar title. Uses the project title if none is specified.",
@@ -22639,15 +22698,16 @@ var require_yaml_intelligence_resources = __commonJS({
           "(*",
           "*)"
         ],
+        rust: "//",
         mermaid: "%%"
       },
       "handlers/mermaid/schema.yml": {
-        _internalId: 180612,
+        _internalId: 180662,
         type: "object",
         description: "be an object",
         properties: {
           "mermaid-format": {
-            _internalId: 180604,
+            _internalId: 180654,
             type: "enum",
             enum: [
               "png",
@@ -22663,7 +22723,7 @@ var require_yaml_intelligence_resources = __commonJS({
             exhaustiveCompletions: true
           },
           theme: {
-            _internalId: 180611,
+            _internalId: 180661,
             type: "anyOf",
             anyOf: [
               {
@@ -31819,7 +31879,8 @@ var kLangCommentChars = {
   dot: "//",
   ojs: "//",
   apl: "\u235D",
-  ocaml: ["(*", "*)"]
+  ocaml: ["(*", "*)"],
+  rust: "//"
 };
 function escapeRegExp(str2) {
   return str2.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
