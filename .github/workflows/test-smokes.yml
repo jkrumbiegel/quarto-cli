@@ -63,6 +63,8 @@ jobs:
         with:
           r-version: "4.3.2"
           use-public-rspm: true
+          # required to avoid rtools bin in path
+          windows-path-include-rtools: false
 
       - name: Install node (for Playwright, MECA)
         uses: actions/setup-node@v3
@@ -153,7 +155,7 @@ jobs:
         uses: browser-actions/setup-chrome@latest
 
       - name: Setup Julia
-        uses: cderv/setup-julia@fix-tar
+        uses: julia-actions/setup-julia@v1
         with:
           version: "1.10"
 
