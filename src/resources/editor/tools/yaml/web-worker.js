@@ -15729,6 +15729,16 @@ try {
             description: "Theme name, theme scss file, or a mix of both."
           },
           {
+            name: "body-classes",
+            tags: {
+              formats: [
+                "$html-doc"
+              ]
+            },
+            schema: "string",
+            description: "Classes to apply to the body of the document.\n"
+          },
+          {
             name: "minimal",
             schema: "boolean",
             default: false,
@@ -19580,6 +19590,7 @@ try {
           "The responsive breakpoint below which the navbar will collapse into a\nmenu (<code>sm</code>, <code>md</code>, <code>lg</code> (default),\n<code>xl</code>, <code>xxl</code>).",
           "List of items for the left side of the navbar.",
           "List of items for the right side of the navbar.",
+          "The position of the collapsed navbar toggle when in responsive\nmode",
           "Side navigation options",
           "The identifier for this sidebar.",
           "The sidebar title. Uses the project title if none is specified.",
@@ -19714,6 +19725,7 @@ try {
           "The responsive breakpoint below which the navbar will collapse into a\nmenu (<code>sm</code>, <code>md</code>, <code>lg</code> (default),\n<code>xl</code>, <code>xxl</code>).",
           "List of items for the left side of the navbar.",
           "List of items for the right side of the navbar.",
+          "The position of the collapsed navbar toggle when in responsive\nmode",
           "Side navigation options",
           "The identifier for this sidebar.",
           "The sidebar title. Uses the project title if none is specified.",
@@ -21886,6 +21898,7 @@ try {
           "The responsive breakpoint below which the navbar will collapse into a\nmenu (<code>sm</code>, <code>md</code>, <code>lg</code> (default),\n<code>xl</code>, <code>xxl</code>).",
           "List of items for the left side of the navbar.",
           "List of items for the right side of the navbar.",
+          "The position of the collapsed navbar toggle when in responsive\nmode",
           "Side navigation options",
           "The identifier for this sidebar.",
           "The sidebar title. Uses the project title if none is specified.",
@@ -22204,6 +22217,7 @@ try {
           "The responsive breakpoint below which the navbar will collapse into a\nmenu (<code>sm</code>, <code>md</code>, <code>lg</code> (default),\n<code>xl</code>, <code>xxl</code>).",
           "List of items for the left side of the navbar.",
           "List of items for the right side of the navbar.",
+          "The position of the collapsed navbar toggle when in responsive\nmode",
           "Side navigation options",
           "The identifier for this sidebar.",
           "The sidebar title. Uses the project title if none is specified.",
@@ -22415,7 +22429,8 @@ try {
           },
           "Disambiguating year suffix in author-date styles (e.g.&nbsp;\u201Ca\u201D in \u201CDoe,\n1999a\u201D).",
           "Manuscript configuration",
-          "internal-schema-hack"
+          "internal-schema-hack",
+          "Classes to apply to the body of the document."
         ],
         "schema/external-schemas.yml": [
           {
@@ -22640,15 +22655,16 @@ try {
             "(*",
             "*)"
           ],
+          rust: "//",
           mermaid: "%%"
         },
         "handlers/mermaid/schema.yml": {
-          _internalId: 180612,
+          _internalId: 180619,
           type: "object",
           description: "be an object",
           properties: {
             "mermaid-format": {
-              _internalId: 180604,
+              _internalId: 180611,
               type: "enum",
               enum: [
                 "png",
@@ -22664,7 +22680,7 @@ try {
               exhaustiveCompletions: true
             },
             theme: {
-              _internalId: 180611,
+              _internalId: 180618,
               type: "anyOf",
               anyOf: [
                 {
@@ -31833,7 +31849,8 @@ ${tidyverseInfo(
     dot: "//",
     ojs: "//",
     apl: "\u235D",
-    ocaml: ["(*", "*)"]
+    ocaml: ["(*", "*)"],
+    rust: "//"
   };
   function escapeRegExp(str2) {
     return str2.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
