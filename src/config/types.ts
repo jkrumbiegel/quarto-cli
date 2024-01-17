@@ -228,6 +228,7 @@ import {
   kToolsDownload,
   kToolsShare,
   kTopLevelDivision,
+  kUseRsvgConvert,
   kValidateYaml,
   kVariables,
   kVariant,
@@ -479,6 +480,7 @@ export interface FormatRender {
   [kClearCellOptions]?: boolean;
   [kIpynbProduceSourceNotebook]?: boolean;
   [kHtmlTableProcessing]?: "none";
+  [kUseRsvgConvert]?: boolean;
   [kValidateYaml]?: boolean;
   [kCanonicalUrl]?: boolean | string;
 }

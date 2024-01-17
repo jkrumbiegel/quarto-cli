@@ -5,6 +5,13 @@ local function convert_svg(path)
   local stem = pandoc.path.split_extension(path)
   local output = stem .. '.pdf'
 
+  -- #8299
+  -- if the output file already exists, don't reconvert
+  if _quarto.file.exists(output) then
+    warn("Skipping SVG conversion for " .. path .. " because output file already exists: " .. output)
+    return output
+  end
+
   local status, results = pcall(pandoc.pipe, "rsvg-convert", {"-f", "pdf", "-a", "-o", output, path}, "")
   if status then
     return output
@@ -58,6 +65,9 @@ local tex_safe_filename = function(filename)
 end
 
 function pdfImages() 
+  if not option("use-rsvg-convert", true) then
+    return {}
+  end
   return {
     -- convert SVG images to PDF when rendering PDFS
     Image = function(image)
