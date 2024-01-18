@@ -342,6 +342,7 @@ export interface NotebookPreviewDescriptor {
   url?: string;
   title?: string;
   [kDownloadUrl]?: string;
+  order?: number;
 }
 
 export interface FormatExtras {
